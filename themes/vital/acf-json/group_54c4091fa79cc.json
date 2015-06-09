@@ -1,0 +1,60 @@
+{
+    "key": "group_54c4091fa79cc",
+    "title": "Corner Flash Colour",
+    "fields": [
+        {
+            "key": "field_54c14fff6f9ad",
+            "label": "Corner Flash Colour",
+            "name": "corner_flash_colour",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "green": "Green",
+                "grey": "Grey",
+                "purple": "Purple",
+                "pink": "Pink"
+            },
+            "default_value": {
+                "green": "green"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1422133723
+}

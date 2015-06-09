@@ -1,0 +1,11 @@
+{% if item.sub_title_position == 'Before title' %}
+    {% include 'subtitle.twig' %}
+{% endif %}
+
+{% if item.title is not empty %}
+    {{ item.title }}
+{% endif %}
+
+{% if item.sub_title_position == 'After title' %}
+    {% include 'subtitle.twig' %}
+{% endif %}

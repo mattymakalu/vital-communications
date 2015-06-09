@@ -1,0 +1,6 @@
+{
+    "name": "vital_fr",
+    "dependencies": {
+       "foundation": "~5.4.7"
+    }
+}

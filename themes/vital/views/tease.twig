@@ -1,0 +1,18 @@
+<div class="item {% if post.get_field('enlarged_listing_item') %}w2{% endif %}">
+    <div class="item-card">
+        <a href="{{ post.permalink }}">
+            <div class="item-card--img">
+                <img src="{{ post.thumbnail.src }}" />
+            </div>
+
+            <div class="item-card--body">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.post_excerpt }}</p>
+            </div>
+
+            <div class="item-card--footer">
+                <p class="item-card--date">{{ post.display_date }}</p>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% include 'partials/featured-image.twig' %}
+
+    <section class="section section--no-padding-bottom">
+        <div class="row">
+            <div class="small-12 medium-10 columns">
+                {% if acf.related_partner.value %}
+                    <p class="pretitle">
+                        {% for partner in acf.related_partner.value  %}
+                            {{ partner.post_title }}{% if loop.length > 1 and loop.index < loop.length %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                {% endif %}
+
+                {% include 'partials/custom-title.twig' %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--no-padding-top">
+        <div class="row">
+        {% for block in acf.content.value  %}
+            {% if block.acf_fc_layout == 'text' %}
+                <div class="small-12 columns">
+                    {{ block.text }}
+                </div>
+            {% endif %}
+
+            {% if block.acf_fc_layout == 'image_gallery' %}
+                {% for item in block.gallery %}
+                    <div class="columns {% if item.in_column %}small-6{% else %}small-12{% endif %}">
+
+                        {% if item.mobile_image %}
+                            <picture>
+                                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                <source srcset="{{ TimberImage(item.image).src }}" media="(min-width: 640px)">
+                                <!--[if IE 9]></video><![endif]-->
+
+                                <img src="{{ TimberImage(item.mobile_image).src }}" alt="{{ TimberImage(item.mobile_image)._wp_attachment_image_alt }}">
+                            </picture>
+                        {% else %}
+                            <img src="{{ TimberImage(item.image).src }}" alt="{{ TimberImage(item.image)._wp_attachment_image_alt }}">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+    </section>
+
+    {% if acf.case_study_file.value %}
+        <section class="section">
+            <div class="row text-center">
+                <a class="button" style="display: inline-block" href="{{ acf.case_study_file.value.url }}"><strong>Download</strong> case study</a>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if acf.related_work.value %}
+        <section class="section section--no-padding-bottom">
+            <ul class="image-grid">
+                {% for relatedPost in acf.related_work.value %}
+                    {% set post = TimberPost(relatedPost) %}
+                    {% include 'tease-work.twig' %}
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+{% endblock %}

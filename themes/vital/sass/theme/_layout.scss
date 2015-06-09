@@ -1,0 +1,204 @@
+/* ---- Layout ---- */
+
+main {
+	background: $white;
+}
+
+.section {
+	clear: both;
+	padding: $spacing-base 0;
+
+	&.section--no-padding {
+		padding: 0;
+	}
+	&.section--no-padding-top {
+		padding-top: 0;
+	}
+	&.section--no-padding-bottom {
+		padding-bottom: 0;
+	}
+
+	&.section--double-padding-top {
+		@include min-screen($small-screen) {
+			padding-top: $spacing-base*2;
+		}
+	}
+}
+
+.section-bg--one-a {
+	background: $green url($path-images+'backgrounds/green-320.gif') 0 0 no-repeat;
+	background-size: cover;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		min-height: 520px;
+		padding-top: 100px;
+		background: $white url($path-images+'backgrounds/01.jpg') 50% 50% no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--one-b {
+	background: $brown-dark;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		min-height: 520px;
+		padding-top: 100px;
+		background: $white url($path-images+'backgrounds/04.jpg') 50% 50% no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--two-a {
+	background: $grey-light-off;
+	
+	@include min-screen($small-screen) {
+		padding-top: 50px;
+		padding-bottom: $spacing-base + 20;
+	}
+}
+
+.section-bg--two-b {
+	background: $purple url($path-images+'backgrounds/purple.jpg') 50% 0 no-repeat;
+
+	@include min-screen($small-screen) {
+		padding-top: 50px;
+		padding-bottom: $spacing-base + 20;
+	}
+}
+
+.section-bg--three-a {
+	background: $purple url($path-images+'backgrounds/purple-320.gif') 30% 0 no-repeat;
+	background-size: cover;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		min-height: 520px;
+		padding-top: 218px;
+		background: $white url($path-images+'backgrounds/02.jpg') 50% 50% no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--four-a {
+	background: $pink url($path-images+'backgrounds/pink.jpg') 50% 0 no-repeat;
+
+	@include min-screen($small-screen) {
+		padding-top: 50px;
+		padding-bottom: $spacing-base + 20;
+	}
+}
+
+.section-bg--five-a {
+	background: $pink url($path-images+'backgrounds/pink-320.gif') 30% 0 no-repeat;
+	background-size: cover;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		min-height: 520px;
+		padding-top: 100px;
+		background: $white url($path-images+'backgrounds/03.jpg') 50% 50% no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--five-b {
+	background: $white url($path-images+'backgrounds/white.jpg') 50% 0 no-repeat;
+
+	@include min-screen($small-screen) {
+		padding-top: 50px;
+		padding-bottom: $spacing-base + 20;
+	}
+}
+
+.section-bg--five-c {
+	background: $purple url($path-images+'backgrounds/purple-320.gif') 30% 0 no-repeat;
+	background-size: cover;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		min-height: 520px;
+		padding-top: 100px;
+		background: $white url($path-images+'backgrounds/05.jpg') 50% 50% no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--six-a {
+	background: $green url($path-images+'backgrounds/green-320.gif') 0 0 no-repeat;
+	background-size: cover;
+	color: $white;
+
+	@include min-screen($small-screen) {
+		padding-top: 50px;
+		padding-bottom: $spacing-base + 20;
+		background: $green url($path-images+'backgrounds/green.jpg') 50% 0 no-repeat;
+		color: $colour-text-default;
+	}
+}
+
+.section-bg--seven-a {
+	background: $off-white url($path-images+'backgrounds/white-deep.gif') 50% 0 no-repeat;
+}
+
+.margin-bottom-base {
+	margin-bottom: $spacing-base;
+}
+.margin-bottom-half {
+	margin-bottom: $spacing-half;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.cover {
+	overflow: hidden;
+	height: 180px;
+	background: $grey-banner;
+
+	img {
+		position: relative;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		max-width: none;
+		min-width: 100%;
+		height: 180px;
+	}
+
+	@include min-screen($small-screen) {
+		height: 320px;
+
+		img {
+			height: 320px;
+		}
+	}
+
+	@include min-screen($medium-screen) {
+		height: 520px;
+
+		img {
+			min-height: 520px;
+		}
+	}
+}
+
+.map {
+	margin-bottom: $spacing-half;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+}

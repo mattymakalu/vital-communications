@@ -1,0 +1,23 @@
+/* ---- Widgets ---- */
+
+.share-widget {
+	padding: $spacing-base 0;
+
+	h2 {
+		display: inline-block;
+		margin-right: 20px;
+		font-size: em-calc(18);
+		line-height: 24px;
+	}
+
+	ul {
+		display: inline-block;
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin-right: 20px;
+			line-height: 24px;
+		}
+	}
+}

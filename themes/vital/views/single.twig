@@ -1,0 +1,62 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% include 'partials/featured-image.twig' %}
+
+    <!-- Section 1 -->
+    <section class="section section--double-padding-top">
+
+        <div class="row">
+            <div class="small-12 columns">
+                <p class="pretitle">{{ post.display_date }}</p>
+                {% include 'partials/custom-title.twig' %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns type-larger editorial-content">
+                {{ post.content }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+
+                <div class="share-widget">
+                    <h2>Share</h2>
+                    <ul>
+                        <li>
+                            <a href="http://twitter.com/share?url={{ post.permalink }}">
+                                <img src="{{site.theme.link}}/images/social/twitter-black.png" alt="Share on Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ post.permalink }}&title={{ post.post_title }}&summary={{ post.post_excerpt }}">
+                                <img src="{{site.theme.link}}/images/social/linkedin-black.png" alt="Share on LinkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/share?url={{ post.permalink }}">
+                                <img src="{{site.theme.link}}/images/social/googleplus-black.png" alt="Share on Google+">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{ post.title }}&p[summary]={{ post.post_excerpt }}&p[url]={{ post.permalink }}">
+                                <img src="{{site.theme.link}}/images/social/facebook-black.png" alt="Share on Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://pinterest.com/pin/create/button/?url={{ post.permalink }}&media={{ post.thumbnail.src }}&description={{ post.post_excerpt }}">
+                                <img src="{{site.theme.link}}/images/social/pinterest-black.png" alt="Share on Pinterest">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- // Section 1 -->
+
+{% endblock %}

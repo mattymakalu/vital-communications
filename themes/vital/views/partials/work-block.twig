@@ -1,0 +1,9 @@
+<section class="section section--no-padding">
+    <ul class="image-grid">
+        {% set works = TimberPost(item.work) %}
+
+        {% for post in works %}
+            {% include 'tease-work.twig' %}
+        {% endfor %}
+    </ul>
+</section>

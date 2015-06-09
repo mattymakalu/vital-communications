@@ -1,0 +1,17 @@
+{% if post.post_name == 'contact' and options.main_office_latitude %}
+    <div id="gmap-feature" class="gmap gmap--feature" data-lng="{{ options.main_office_longitude }}" data-lat="{{ options.main_office_latitude }}" data-icon="{{site.theme.link}}/images/ui/map-marker-large.png"></div>
+{% else %}
+    {% if acf.featured_image.value %}
+        <!-- Cover Image -->
+        <div class="cover">
+            <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="{{ TimberImage(acf.featured_image.value).src }}" media="(min-width: 640px)">
+                <!--[if IE 9]></video><![endif]-->
+
+                <img src="{{ TimberImage(acf.mobile_featured_image.value).src }}" alt="">
+            </picture>
+        </div>
+        <!-- // Cover Image -->
+    {% endif %}
+{% endif %}

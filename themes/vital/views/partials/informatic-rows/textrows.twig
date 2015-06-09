@@ -1,0 +1,5 @@
+{% for row in item.text_rows %}
+    <div class="{% if row.show_arrow_icon %}arrow-bullet{% endif %}">
+        {{ row.text }}
+    </div>
+{% endfor %}

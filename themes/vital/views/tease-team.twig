@@ -1,0 +1,44 @@
+<div class="block-card">
+    <a href="#" id="team-member-{{ loop.index }}">
+        <img src="{{ TimberImage(post.profile_photo).src }}" alt="{{ TimberImage(post.profile_photo)._wp_attachment_image_alt }}">
+
+        <p>
+            <strong class="type-larger">{{ post.post_title }}</strong><br>
+            {{ post.role }}
+        </p>
+
+        <div style="display: none" aria-hidden="true">
+            <div class="popup popup--team">
+                <div class="popup__header">
+                    <h2 class="popup__title">Powered by our <strong>people</strong></h2>
+                </div>
+
+                <div class="popup__content">
+                    <div class="row">
+                        <div class="small-12 medium-6 columns">
+                            <img src="{{ TimberImage(post.profile_photo).src }}" alt="{{ TimberImage(post.profile_photo)._wp_attachment_image_alt }}">
+                        </div>
+
+                        <div class="small-12 medium-6 columns">
+                            <h3 class="popup__person">{{ post.post_title }}</h3>
+                            <span class="popup__role">{{ post.role }}</span>
+                            {{ post.get_field('profile') }}
+                        </div>
+                    </div>
+
+                    {% if (loop.index - 1) > 0 %}
+                        <span class="popup__gallery-link" data-location="#team-member-{{ loop.index - 1 }}">Prev</span>
+                    {% else %}
+                        <span class="popup__gallery-link" data-location="#team-member-{{ loop.length }}">Prev</span>
+                    {% endif %}
+
+                    {% if (loop.index + 1) <= loop.length %}
+                        <span class="popup__gallery-link" data-location="#team-member-{{ loop.index + 1 }}">Next</span>
+                    {% else %}
+                        <span class="popup__gallery-link" data-location="#team-member-1">Next</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

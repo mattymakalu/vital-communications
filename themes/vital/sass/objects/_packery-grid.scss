@@ -1,0 +1,85 @@
+/* ---- Packery Grid ---- */
+
+.packery-container {
+	padding-bottom: $gutter-half;
+
+	@include min-screen($small-screen) {
+		margin: 0 -$gutter-half;
+		padding: $gutter-base 0 $gutter-base*1.5 0;
+	}
+
+	.item {
+		width: 100%;
+		padding-bottom: $gutter-base;
+
+		@include min-screen($small-screen) {
+			width: 33.3333%;
+			padding: 0 $gutter-half $gutter-base $gutter-half;
+
+			&.w2 {
+				width: 66.6667%;
+			}
+		}
+
+		.item-card {
+			position: relative;
+			border-bottom: 1px solid #e8e8e8;
+			padding-bottom: 50px;
+			background: $white;
+
+			@include min-screen($small-screen) {
+				min-height: 410px;
+			}
+
+			a {
+				display: block;
+			}
+
+			.item-card--body {
+				padding: $gutter-base $gutter-half;
+
+				h2 {
+					font-size: em-calc(18);
+					line-height: 1.2;
+				}
+			}
+
+			.item-card--footer {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+
+				float: left;
+				width: 100%;
+				height: 50px;
+				border-top: 2px dotted $grey-light;
+
+				@include min-screen($small-screen) {
+					padding: 0 $gutter-half;
+				}
+
+				p {
+					margin: 0;
+					line-height: 50px;
+					font-size: em-calc(12);
+				}
+
+				.item-card--date {
+					float: left;
+					opacity: .6;
+				}
+
+				.item-card--comments {
+					float: right;
+					padding-left: 16px;
+					background: url($path-images+'icons/comment-small.gif') 0 50% no-repeat;
+
+					span {
+						opacity: .6;
+					}
+				}
+			}
+		}
+	}
+
+}

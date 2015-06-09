@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="blocks">
+        {% include 'partials/content-blocks.twig' %}
+    </div>
+
+    {% if post.post_name == 'services' %}
+        {% include 'partials/services.twig' %}
+    {% endif %}
+
+    {% if post.get_field('footer_content') %}
+        {% include 'partials/footer-content.twig' %}
+    {% endif %}
+
+{% endblock %}

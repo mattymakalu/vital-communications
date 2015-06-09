@@ -1,0 +1,12 @@
+<li>
+    <a href="{{ post.permalink }}">
+        <div class="image-grid--content">
+            <div class="image-grid--content-title">
+                <h3>{{ post.post_title }}</h3>
+                <p class="posttitle">{{ post.excerpt }}</p>
+            </div>
+        </div>
+
+        <img src="{{ TimberImage(post.listing_image).src }}" alt="{{ TimberImage(post.listing_image)._wp_attachment_image_alt }}">
+    </a>
+</li>

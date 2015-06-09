@@ -1,0 +1,47 @@
+/* ---- Variables ---- */
+
+// ---- Paths
+
+	$path-images: '../images/';
+
+// ---- Fonts
+
+	$font-body-default: 'Gotham A', 'Gotham B', sans-serif;
+	$font-body-secondary: 'Open Sans', sans-serif;
+	$font-heading-default: 'Gotham A', 'Gotham B', sans-serif;
+
+// ---- Colours
+
+	$white: #fff;
+	$black: #000;
+	$off-white: #f5f5f5;
+	$brown-dark: #554a3f;
+	$grey-light-off: #aaa49f;
+	$grey-light: #edecec;
+	$grey-banner: #d9d9d7;
+	$grey-mid: #666;
+	$green: #94b151;
+	$pink: #f0517b;
+	$purple: #6a446c;
+
+	$colour-text-default: $brown-dark;
+	
+// ---- Spacing
+
+	$spacing-base: 32px;
+	$spacing-half: 16px;
+	$spacing-double: 64px;
+	$gutter-base: 20px;
+	$gutter-half: 10px;
+
+
+// ---- Media Queries
+
+	$small-screen: 640px;
+	$medium-screen: 920px;
+	$large-screen: 1200px;
+
+// ---- Timing
+
+	$ui-transition-base: 0.5s;
+	$ui-transition-half: 0.25s;

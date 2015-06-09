@@ -1,0 +1,322 @@
+/* ---- Service Cards ---- */
+
+.service-card-grid {
+	margin-bottom: $spacing-base;
+	margin-left: -$gutter-half/2;
+	margin-right: -$gutter-half/2;
+
+	& > li {
+		padding-bottom: $gutter-half;
+		padding-left: $gutter-half/2;
+		padding-right: $gutter-half/2;
+
+		@include max-screen($small-screen) {
+			&:nth-of-type(2n+1) {
+				.service-card--pink:after {				
+					background: linear-gradient(to right, $pink 0%, #ef5682 100%);
+				}
+				.service-card--green:after {				
+					background: linear-gradient(to right, $green 0%, #b2c862 100%);
+				}
+				.service-card--purple:after {				
+					background: linear-gradient(to right, $purple 0%, #764d79 100%);
+				}
+			}
+			&:nth-of-type(2n+2) {
+				.service-card--pink:after {				
+					background: linear-gradient(to right, #ef5682 0%, #f3668f 100%);
+				}
+				.service-card--green:after {				
+					background: linear-gradient(to right, #b2c862 0%, #c2d46c 100%);
+				}
+				.service-card--purple:after {				
+					background: linear-gradient(to right, #764d79 0%, #7f5381 100%);
+				}
+			}
+		}
+
+		@include screen($small-screen, $medium-screen) {
+			&:nth-of-type(4n+2) {
+				.service-card--pink:after {				
+					background: linear-gradient(to right, $pink 0%, #ef5682 100%);
+				}
+				.service-card--green:after {				
+					background: linear-gradient(to right, $green 0%, #b2c862 100%);
+				}
+				.service-card--purple:after {				
+					background: linear-gradient(to right, $purple 0%, #764d79 100%);
+				}
+			}
+			&:nth-of-type(4n+3) {
+				.service-card--pink:after {
+					background: linear-gradient(to right, #ef5682 0%, #f3668f 100%);
+				}
+				.service-card--green:after {
+					background: linear-gradient(to right, #b2c862 0%, #c2d46c 100%);
+				}
+				.service-card--purple:after {
+					background: linear-gradient(to right, #764d79 0%, #7f5381 100%);
+				}
+			}
+			&:nth-of-type(4n+4) {
+				.service-card--pink:after {
+					background: linear-gradient(to right, #f3668f 0%, #f67499 100%);
+				}
+				.service-card--green:after {
+					background: linear-gradient(to right, #c2d46c 0%, #c6d76e 100%);
+				}
+				.service-card--purple:after {
+					background: linear-gradient(to right, #7f5381 0%, #865888 100%);
+				}
+			}
+		}
+
+		@include min-screen($medium-screen) {
+			&:nth-of-type(6n+3) {
+				.service-card--pink:after {				
+					background: linear-gradient(to right, $pink 0%, #ef5682 100%);
+				}
+				.service-card--green:after {				
+					background: linear-gradient(to right, $green 0%, #b2c862 100%);
+				}
+				.service-card--purple:after {				
+					background: linear-gradient(to right, $purple 0%, #764d79 100%);
+				}
+			}
+			&:nth-of-type(6n+4) {
+				.service-card--pink:after {
+					background: linear-gradient(to right, #ef5682 0%, #f3668f 100%);
+				}
+				.service-card--green:after {
+					background: linear-gradient(to right, #b2c862 0%, #c2d46c 100%);
+				}
+				.service-card--purple:after {
+					background: linear-gradient(to right, #764d79 0%, #7f5381 100%);
+				}
+			}
+			&:nth-of-type(6n+5) {
+				.service-card--pink:after {
+					background: linear-gradient(to right, #f3668f 0%, #f67499 100%);
+				}
+				.service-card--green:after {
+					background: linear-gradient(to right, #c2d46c 0%, #c6d76e 100%);
+				}
+				.service-card--purple:after {
+					background: linear-gradient(to right, #7f5381 0%, #865888 100%);
+				}
+			}
+			&:nth-of-type(6n+6) {
+				.service-card--pink:after {
+					background: linear-gradient(to right, #f67499 0%, #f97ea1 100%);
+				}
+				.service-card--green:after {
+					background: #c6d76e;
+				}
+				.service-card--purple:after {
+					background: linear-gradient(to right, #865888 0%, #8b5c8d 100%);
+				}
+			}
+		}
+	}
+}
+
+.service-card {
+	position: relative;
+	background: $grey-mid;
+	color: $white;
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		z-index: 2;
+		color: inherit;
+	}
+
+	h3 {
+		margin: 0;
+		padding: $gutter-half;
+		border-bottom: 1px dashed $white;
+		font-size: em-calc(14);
+		text-transform: uppercase;
+	}
+
+	ul {
+		margin: 0;
+		padding: $gutter-half;
+		list-style: none;
+
+		li {
+			margin: 0;
+		}
+	}
+
+	&.service-card--pink {
+		background: $pink;
+	}
+	&.service-card--green {
+		background: $green;
+	}
+	&.service-card--purple {
+		background: $purple;
+	}
+
+	// &[class^="icon-"] a, 
+	// &[class*=" icon-"] a {
+	// 	padding-bottom: 50px;
+
+	// 	&:after {
+	// 		content: '';
+	// 		position: absolute;
+	// 		bottom: $gutter-half;
+	// 		left: $gutter-half;
+	// 		display: block;
+	// 		width: 31px;
+	// 		height: 31px;
+	// 		background-position: 50% 50%;
+	// 		background-repeat: no-repeat;
+	// 	}
+	// }
+	&[class^="icon-"] a, 
+	&[class*=" icon-"] a {
+		padding-bottom: 50px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: $gutter-half;
+			left: $gutter-half;
+			display: block;
+			width: 38px;
+			height: 35px;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+	}
+	// &.icon-bars a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/bars-white.png');
+	// 	}
+	// }
+	// &.icon-lightbulb a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/lightbulb-white.png');
+	// 	}
+	// }
+	// &.icon-pencil a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/pencil-white.png');
+	// 	}
+	// }
+	// &.icon-letter-a a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/letter-a-white.png');
+	// 	}
+	// }
+	// &.icon-cog a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/cog-white.png');
+	// 	}
+	// }
+	// &.icon-page a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/page-white.png');
+	// 	}
+	// }
+	// &.icon-magnifying-glass a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/magnifying-glass-white.png');
+	// 	}
+	// }
+	// &.icon-paper a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/paper-white.png');
+	// 	}
+	// }
+	// &.icon-box a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/box-white.png');
+	// 	}
+	// }
+	// &.icon-gauge a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/gauge-white.png');
+	// 	}
+	// }
+	// &.icon-chart a {
+	// 	&:after {
+	// 		background-image: url($path-images+'icons/chart-white.png');
+	// 	}
+	// }
+	&.icon-warehouse-fulfillment a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/warehouse-fulfillment.png');
+		}
+	}
+	&.icon-digital-asset-management a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/digital-asset-management.png');
+		}
+	}
+	&.icon-brand-colour-management a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/brand-colour-management.png');
+		}
+	}
+	&.icon-signage a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/signage.png');
+		}
+	}
+	&.icon-web-to-print a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/web-to-print.png');
+		}
+	}
+	&.icon-transactional-and-security-print a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/transactional-and-security-print.png');
+		}
+	}
+	&.icon-marketing-print a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/marketing-print.png');
+		}
+	}
+	&.icon-print-management a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/print-management.png');
+		}
+	}
+	&.icon-operational-print a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/operational-print.png');
+		}
+	}
+	&.icon-campaign-management a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/campaign-management.png');
+		}
+	}
+	&.icon-creative a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/creative.png');
+		}
+	}
+	&.icon-consultancy a {
+		&:after {
+			background-image: url($path-images+'icons/by-service/consultancy.png');
+		}
+	}
+
+}

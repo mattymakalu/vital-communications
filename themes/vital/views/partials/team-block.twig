@@ -1,0 +1,40 @@
+<section class="section section-bg--two-b type-light">
+
+    <div class="row">
+        <div class="small-12 columns">
+            {{ item.title }}
+            {{ item.text }}
+
+            {% set team = TimberPost(item.team_members) %}
+
+            <!-- People Grid -->
+            <div class="slider-manual">
+                {% for post in team %}
+                    {% if (loop.index == 1) %}
+                    <div>
+                        <ul class="small-block-grid-2 medium-block-grid-3 team-grid">
+                    {% endif %}
+
+                        <li>
+                            {% include 'tease-team.twig' %}
+                        </li>
+
+                    {% if (loop.index is divisible by(6)) %}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="small-block-grid-2 medium-block-grid-3 team-grid">
+                    {% endif %}
+
+                    {% if (loop.last) %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <!-- // People Grid -->
+        </div>
+    </div>
+
+</section>

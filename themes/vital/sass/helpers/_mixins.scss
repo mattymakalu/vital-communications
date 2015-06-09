@@ -1,0 +1,61 @@
+/* ---- Mixins ---- */
+
+@mixin coverer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin centerer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+// ---- Media Queries
+
+// @include screen(min-width, max-width)			// shortcut for @media screen and (min-width ...) and (max-width ...)
+@mixin screen($resMin, $resMax) {
+  @media screen and (min-width: $resMin) and (max-width: $resMax) {
+    @content;
+  }
+}
+
+// @include max-screen(width)						// shortcut for @media screen and (max-width ...)
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+// @include min-screen(width)						// shortcut for @media screen and (min-width ...)
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+
+// @include screen-height(min-height, max-height)	// shortcut for @media screen and (min-height ...) and (max-height ...)
+@mixin screen-height($resMin, $resMax) {
+  @media screen and (min-height: $resMin) and (max-height: $resMax) {
+    @content;
+  }
+}
+
+// @include max-screen-height(height)				// shortcut for @media screen and (max-height ...)
+@mixin max-screen-height($res) {
+  @media screen and (max-height: $res) {
+    @content;
+  }
+}
+
+// @include min-screen-height(height)				// shortcut for @media screen and (min-height ...)
+@mixin min-screen-height($res) {
+  @media screen and (min-height: $res) {
+    @content;
+  }
+}

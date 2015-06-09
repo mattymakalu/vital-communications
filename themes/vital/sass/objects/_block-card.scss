@@ -1,0 +1,20 @@
+/* ---- Block Cards ---- */
+
+.block-card {
+	a {
+		// color: inherit;
+	}
+
+	p {
+		padding: $spacing-half;
+		padding-bottom: $spacing-base;
+		background: $white;
+		color: $colour-text-default;
+		text-transform: uppercase;
+		line-height: 1.4;
+
+		@include min-screen($small-screen) {
+			height: 120px;
+		}
+	}
+}

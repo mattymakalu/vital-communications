@@ -1,0 +1,9 @@
+<section class="section {{ item.template }}">
+    <div class="row">
+        {% if (item.template == 'section-bg--five-a') or (item.template == 'section-bg--three-a') or (item.template == 'section-bg--one-a') or (item.template == 'section-bg--five-c') or (item.template == 'section-bg--one-b') %}
+            {% include 'partials/informatic-rows/' ~ item.template ~ '.twig' %}
+        {% else %}
+            {% include 'partials/informatic-rows/default.twig' %}
+        {% endif %}
+    </div>
+</section>

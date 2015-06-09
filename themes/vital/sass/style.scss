@@ -1,0 +1,33 @@
+/* ---- Vital SCSS -------------------------------------------------------- */
+/* ------------------------------------------------------------------------ */
+/* ---- Simon Kitson, kitsimons.com --------------------------------------- */
+
+// ---- Imports / Helpers
+	@import 'helpers/vars';
+	@import 'helpers/mixins';
+
+	@import 'helpers/settings';
+	$include-html-global-classes: false;
+	@import 'foundation/components/global';
+	@import 'helpers/block-grid-5';
+
+// ---- Base
+	@import 'base/site';
+	@import 'base/typography';
+	@import 'base/buttons';
+	@import 'base/forms';
+
+
+// ---- Objects
+	@import 'objects/image-grid';
+	@import 'objects/block-card';
+	@import 'objects/service-card';
+	@import 'objects/packery-grid';
+	@import 'objects/widgets';
+
+
+// ---- Theme
+	@import 'theme/header';
+	@import 'theme/colophon';
+	@import 'theme/footer';
+	@import 'theme/layout';

@@ -1,0 +1,39 @@
+{
+    "key": "group_54c4091fb1860",
+    "title": "Listing extensions",
+    "fields": [
+        {
+            "key": "field_54b424ad8d6f9",
+            "label": "Enlarged listing item",
+            "name": "enlarged_listing_item",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Check this field if you want this post to appear larger in the listing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1422133728
+}

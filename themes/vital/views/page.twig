@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% include 'partials/featured-image.twig' %}
+
+    <section class="section">
+        <div class="row">
+            <div class="small-12 columns">
+                {% include 'partials/custom-title.twig' %}
+                {{post.content}}
+            </div>
+        </div>
+    </section>
+
+    {% if post.post_name == 'contact' and options.offices %}
+        <section class="section contact-blocks">
+            <div class="row">
+                {# Inline style for office block due to Front-end Developer not being available for support. Must be changed when support work is done. #}
+                {% for office in options.offices %}
+                    <div class="small-12 medium-4 columns {% if loop.index is divisible by(3) %} row-end" {% endif %}">
+                        <div id="gmap-{{ loop.index }}" class="gmap gmap--small" data-lng="{{ office.longitude }}" data-lat="{{ office.latitude }}" data-icon="{{site.theme.link}}/images/ui/map-marker-small.png"></div>
+                        <h3 class="office__title">{{ office.title }}</h3>
+                        {{ office.address }}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <style>
+            .row-end + .columns {
+                clear: left;
+            }
+
+            .contact-blocks .columns {
+                float: left !important;
+            }
+        </style>
+    {% endif %}
+{% endblock %}

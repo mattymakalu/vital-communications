@@ -1,0 +1,89 @@
+{
+    "key": "group_54c4091fa111e",
+    "title": "Content extensions",
+    "fields": [
+        {
+            "key": "field_54b27dcc865bd",
+            "label": "Custom title",
+            "name": "custom_title",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Use this field for creating a custom page title. This is handy when you want part of the title to be bold. The only requirement is that you MUST use the \"Heading 1\" style. This is important for SEO.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all"
+        },
+        {
+            "key": "field_54b2807186671",
+            "label": "Featured image",
+            "name": "featured_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "If set this image appears at the top of the page below the header.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "array"
+        },
+        {
+            "key": "field_54b2807186677",
+            "label": "Mobile Featured image",
+            "name": "mobile_featured_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "If set this image appears at the top of the page below the header (for mobile only).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "template-landing.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1422133720
+}

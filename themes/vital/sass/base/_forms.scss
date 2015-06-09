@@ -1,0 +1,119 @@
+/* ---- Forms ---- */
+
+input[type=text],
+input[type=email],
+input[type=number],
+textarea {
+	width: 100%;
+	margin: 0;
+	padding: 18px;
+	border: 1px solid $grey-light;
+	background: $off-white;
+
+	color: $colour-text-default;
+	text-transform: uppercase;
+	font-size: em-calc(14);
+	font-weight: 300;
+
+	resize: none;
+
+	&:focus {
+		outline: none;
+		border-color: darken($grey-light, 5%);
+	}
+}
+
+input[type=submit] {
+	@extend .button;
+	padding-left: $spacing-base*2;
+	padding-right: $spacing-base*2;
+	background: $off-white;
+}
+
+.formicon {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 18px;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+	}
+
+	&.formicon-person:before {
+		width: 18px;
+		height: 17px;
+		margin-top: -9px;
+		background-image: url($path-images+'icons/person-small.png');
+	}
+	&.formicon-email:before {
+		width: 19px;
+		height: 11px;
+		margin-top: -6px;
+		background-image: url($path-images+'icons/email-small.png');
+	}
+	&.formicon-phone:before {
+		width: 18px;
+		height: 17px;
+		margin-top: -9px;
+		background-image: url($path-images+'icons/phone-small.png');
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	textarea {
+		padding-left: 48px;
+	}
+}
+
+.contact-form {
+
+	p {
+		color: $colour-text-default;
+		text-transform: uppercase;
+		font-size: em-calc(14);
+		font-weight: 300;
+		
+		&:nth-of-type(1),
+		&:nth-of-type(2) {
+			@include min-screen($small-screen) {
+				width: 50%;
+			}
+		}
+
+		&:nth-of-type(1) {
+			@include min-screen($small-screen) {
+				float: left;
+				padding-right: $gutter-base/2;
+			}
+
+			span {
+				@extend .formicon;
+				@extend .formicon-person;
+			}
+		}
+
+		&:nth-of-type(2) {
+			@include min-screen($small-screen) {
+				float: right;
+				padding-left: $gutter-base/2;
+			}
+
+			span {
+				@extend .formicon;
+				@extend .formicon-email;
+			}
+		}
+
+		&:nth-of-type(3) {
+			span {
+				@extend .formicon;
+				@extend .formicon-phone;
+			}
+		}
+	}
+
+}

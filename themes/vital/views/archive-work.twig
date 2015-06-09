@@ -1,0 +1,43 @@
+{% extends "list.twig" %}
+
+{% block content %}
+    <section class="section section--no-padding">
+        <ul class="image-grid">
+            {% for post in posts %}
+                {%  if loop.index < 5 %}
+                    {% include 'tease-work.twig' %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="section section-bg--six-a">
+        <div class="row slider">
+            {% for testimonial in posts %}
+                {% if testimonial.get_field('testimonial_title') %}
+                    <div>
+                        <div class="small-12 columns">
+                            {{ testimonial.get_field('testimonial_title') }}
+
+                            <blockquote>
+                                {{ testimonial.get_field('testimonial_quote') }}
+                            </blockquote>
+
+                            {{ testimonial.get_field('testimonial_citation') }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section section--no-padding">
+        <ul class="image-grid">
+            {% for post in posts %}
+                {%  if loop.index > 4 %}
+                    {% include 'tease-work.twig' %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

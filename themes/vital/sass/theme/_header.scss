@@ -1,0 +1,186 @@
+/* ---- Header ---- */
+
+header {
+	background-color: $white;
+
+	@include min-screen($small-screen) {
+		height: 260px;
+		background-position: 50% 100%;
+		background-repeat: no-repeat;
+
+		&.header-purple {
+			background-image: url($path-images+'backgrounds/header-purple.jpg');
+		}
+		&.header-pink {
+			background-image: url($path-images+'backgrounds/header-pink.jpg');
+		}
+		&.header-green {
+			background-image: url($path-images+'backgrounds/header-green.jpg');
+		}
+		&.header-grey {
+			background-image: url($path-images+'backgrounds/header-grey.jpg');
+		}
+	}
+
+	.columns {
+		position: relative;
+
+		@include min-screen($small-screen) {
+			height: 260px;
+		}
+	}
+
+	.header--logo {
+		display: block;
+		width: 208px;
+		height: 77px;
+		margin-top: 30px;
+		margin-bottom: 40px;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-image: url($path-images+'logos/vital-communications-a.png');
+		text-indent: 300px;
+		white-space: nowrap;
+		overflow: hidden;
+
+		@include min-screen($small-screen) {
+			width: 234px;
+			height: 88px;
+			margin-top: 45px;
+			margin-bottom: 0;
+			background-image: url($path-images+'logos/vital-communications-d.png');
+		}
+
+		@include min-screen($large-screen) {
+			width: 260px;
+			height: 98px;
+			margin-top: 40px;
+			margin-left: -94px;
+			background-image: url($path-images+'logos/vital-communications-b.png');
+		}
+	}
+
+	.header--social {
+		display: none;
+		position: absolute;
+		top: 10px;
+		right: $gutter-half;
+		margin: 0;
+		list-style: none;
+		
+		li {
+			display: block;
+			float: left;
+			margin-left: 10px;
+
+			a{
+				&:hover {
+					opacity: .7;
+				}
+			}
+		}
+
+		@include min-screen(960px) {
+			display: block;
+		}
+	}
+
+	.header--nav {
+		position: relative;
+		margin-left: -$gutter-half;
+		margin-right: -$gutter-half;
+
+		@include min-screen($small-screen) {
+			position: absolute;
+			bottom: 60px;
+			left: $gutter-half;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.header--nav-menu {
+			position: absolute;
+			top: -107px;
+			right: 0;
+			display: block;
+			width: 58px;
+			height: 58px;
+			background: url($path-images+'ui/hamburger.png') 0 0 no-repeat;
+			text-indent: 100px;
+			white-space: nowrap;
+			overflow: hidden;
+			opacity: 0.8;
+
+			&:hover,
+			&:active {
+				opacity: 1;
+			}
+
+			&.open {
+				background-position: 0 -58px;
+			}
+
+			@include min-screen($small-screen) {
+				display: none;
+			}
+		}
+
+		ul {
+			display: none;
+			margin: 0;
+			list-style: none;
+			font: $font-heading-default;
+			font-size: em-calc(21);
+			text-transform: uppercase;
+			text-align: center;
+
+			&.open {
+				display: block;
+			}
+
+			@include min-screen($small-screen) {
+				display: block;
+				font-size: em-calc(14);
+				text-align: left;
+			}
+
+			li {
+				display: block;				
+				border-top: 1px solid rgba($grey-light-off, 0.2);
+				
+				@include min-screen($small-screen) {
+					float: left;
+					margin-right: $spacing-base;
+					border-top: none;
+				}
+
+				a {
+					display: block;
+					padding: $spacing-half/2;
+
+					&:hover,
+					&:active {
+						background: $pink;
+						color: $white;
+					}
+
+					&.current {
+						font-weight: 700;
+					}
+
+					@include min-screen($small-screen) {
+						padding: 0;
+
+						&:hover,
+						&:active {
+							background: none;
+							// color: initial;
+							color: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

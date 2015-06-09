@@ -1,0 +1,58 @@
+<section class="section section--double-padding-top">
+    <div class="row">
+        <script> var servicesData = {{ services|json_encode() }}</script>
+        {% for service in services %}
+        <div class="small-12 columns">
+            {{ service.acf.title.value }}
+
+            <!-- Service Grid -->
+            <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6 service-card-grid">
+                {% for post in service.posts %}
+                    <li>
+                        <div class="service-card service-card--{{ service.acf.colour.value }} icon-{{ post.get_field('icon') }}">
+                            <a href="#" id="{{ service.title }}-{{ loop.index }}">
+                                {% set subservices = post.get_field('sub_services') %}
+                                <h3>{{ post.post_title }}</h3>
+                                <ul>
+                                    {% for subservice in subservices %}
+                                        <li>{{ subservice.sub_service_title }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                                <div style="display: none" aria-hidden="true">
+                                    <div class="popup popup--{{ service.acf.colour.value }}">
+                                        <div class="popup__header">
+                                            <h2 class="popup__title icon-{{ post.get_field('icon') }}">{{ post.post_title }}</h2>
+                                        </div>
+
+                                        <div class="popup__content">
+                                            {% for subservice in subservices %}
+                                                <div class="popup__row">
+                                                    <h3>{{ subservice.sub_service_title }}</h3>
+                                                    {{ subservice.description }}
+                                                </div>
+                                            {% endfor %}
+
+                                            {% if (loop.index - 1) > 0 %}
+                                                <span class="popup__gallery-link" data-location="#{{ service.title }}-{{ loop.index - 1 }}">Prev</span>
+                                            {% else %}
+                                                <span class="popup__gallery-link" data-location="#{{ service.title }}-{{ loop.length }}">Prev</span>
+                                            {% endif %}
+
+                                            {% if (loop.index + 1) <= loop.length %}
+                                                <span class="popup__gallery-link" data-location="#{{ service.title }}-{{ loop.index + 1 }}">Next</span>
+                                            {% else %}
+                                                <span class="popup__gallery-link" data-location="#{{ service.title }}-1">Next</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</section>

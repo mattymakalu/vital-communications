@@ -1,0 +1,32 @@
+<section class="section section-bg--two-a type-light">
+
+    <div class="row">
+        <div class="small-12 columns">
+            {{ item.title }}
+            {{ item.text }}
+
+            {% set partners = TimberPost(item.partners) %}
+
+            <!-- Partners Grid -->
+            <div class="slider">
+                {% for partner in partners %}
+                    {% if partner.logo %}
+                        {% if (loop.index == 1) or (loop.index is divisible by(13)) %}
+                        <div>
+                            <ul class="small-block-grid-2 medium-block-grid-4">
+                        {% endif %}
+                                <li>
+                                    <img src="{{ TimberImage(partner.logo).src }}" alt="{{ TimberImage(partner.logo)._wp_attachment_image_alt }}">
+                                </li>
+                        {% if (loop.index is divisible by(12) or (loop.last)) %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <!-- // Partners Grid -->
+        </div>
+    </div>
+
+</section>

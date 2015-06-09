@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <!-- Section 1 -->
+    <section class="section section-bg--seven-a">
+
+        {% if pagination.prev %}
+            <!-- Button -->
+            <div class="row">
+                {{ '[ajax_load_more posts_per_page="8" offset="8" order="ASC" scroll="false" pause="true" button_label="Load Previous"]'|shortcodes}}
+                {#<a class="button margin-bottom-base load-more" href="{{ pagination.prev.link }}">Load <strong>Previous</strong></a>#}
+            </div>
+            <!-- // Button -->
+        {% endif %}
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="packery-container">
+                    {% for post in posts %}
+                        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% if pagination.next %}
+        <!-- Button -->
+        <div class="row">
+            {{ '[ajax_load_more posts_per_page="8" offset="8" scroll="false" pause="true" transition="fade" button_label="Load More"]'|shortcodes}}
+            {#<a class="button margin-bottom-base load-more" href="{{ pagination.next.link }}">Load <strong>More</strong></a>#}
+        </div>
+        <!-- // Button -->
+        {% endif %}
+
+    </section>
+    <!-- // Section 1 -->
+{% endblock %}

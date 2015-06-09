@@ -1,0 +1,63 @@
+/* ---- Colophon ---- */
+
+.colophon {
+	clear: both;
+	padding: $spacing-base 0;
+	background: $grey-mid;
+	color: $white;
+
+	h2 {
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		line-height: 1.8;
+		border-bottom: 1px solid $white;
+
+		a {
+			color: $white;
+
+			&:hover {
+				color: darken($white, 20%);
+			}
+		}
+	}
+
+	p {
+		a {
+			color: $white;
+			border-bottom: none;
+
+			&:hover {
+				color: darken($white, 20%);
+			}
+		}
+	}
+
+	.colophon--contact-details {
+		h2 {
+			border-bottom: none;
+		}
+	}
+
+	.news-feed {
+		list-style: none;
+
+		li {
+			margin-bottom: $spacing-half;
+
+			a {
+				display: block;
+				color: inherit;
+			}
+
+			p {
+				margin-bottom: 0;
+				line-height: 1.8;
+			}
+		}
+
+		.news-feed--meta {
+			font-style: italic;
+		}
+	}
+}

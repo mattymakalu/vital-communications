@@ -1,0 +1,5 @@
+{% if acf.custom_title.value  %}
+    {{ acf.custom_title.value }}
+{% else %}
+    <h1><strong>{{ post.post_title }}</strong></h1>
+{% endif %}

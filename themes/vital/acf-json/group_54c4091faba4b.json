@@ -1,0 +1,57 @@
+{
+    "key": "group_54c4091faba4b",
+    "title": "Footer content",
+    "fields": [
+        {
+            "key": "field_54ac597e49e90",
+            "label": "Footer content",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_54ac597e49e10",
+            "label": "Footer content",
+            "name": "footer_content",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "This is used mainly for the about page. It allows you to enter text at the bottom of this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-landing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1422133725
+}

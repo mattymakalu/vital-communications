@@ -1,0 +1,17 @@
+{% for item in post.get_field('content_blocks') %}
+    {% if item.acf_fc_layout == 'information_row' %}
+        {% include 'information-row.twig' %}
+    {% endif %}
+
+    {% if item.acf_fc_layout == 'work_block' %}
+        {% include 'work-block.twig' %}
+    {% endif %}
+
+    {% if item.acf_fc_layout == 'partners_block' %}
+        {% include 'partners-block.twig' %}
+    {% endif %}
+
+    {% if item.acf_fc_layout == 'team_block' %}
+        {% include 'team-block.twig' %}
+    {% endif %}
+{% endfor %}

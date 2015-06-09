@@ -1,0 +1,16 @@
+/* ---- Footer ---- */
+
+footer {
+	padding: $spacing-half 0;
+
+	p {
+		font-size: em-calc(12);
+	}
+
+
+	.footer--copyright {
+		@include min-screen($small-screen) {
+			text-align: right;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+/* ---- Buttons ---- */
+
+.button {
+	display: block;
+	padding: $spacing-half;
+	border: 1px solid $colour-text-default;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: em-calc(18);
+	font-weight: 300;
+}
