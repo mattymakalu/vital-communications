@@ -7,8 +7,8 @@ ul.choose--language {
 
 	@include min-screen(960px) {
 
-		right: 160px;
-		
+		right: 120px;
+
 		&:before {
 		
 			content: 'Choose a Language:';
