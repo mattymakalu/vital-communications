@@ -1,0 +1,58 @@
+ul.choose--language {
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: block;
+
+	@include min-screen(960px) {
+
+		right: 160px;
+		
+		&:before {
+		
+			content: 'Choose a Language:';
+			float: left;
+			font-size: 0.65em;
+			font-weight: 700;
+			line-height: 40px;
+			text-transform: uppercase;
+			padding: 0 15px 0 0;
+
+		}
+
+	}
+
+	li {
+	
+		display: inline-block; 
+
+		a {
+
+			float: left;
+			background: #999;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			color: #fff;
+			font-weight: 800;
+			transition: all ease-in-out 0.2s;
+
+			&.active {
+
+				background: $purple;
+
+			}
+
+			&:hover {
+
+				background: $green;
+
+			}
+
+		}
+
+	}
+
+}
